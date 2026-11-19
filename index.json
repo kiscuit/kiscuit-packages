@@ -3,28 +3,5 @@
   "id": "com.kiscuit.packages",
   "url": "https://raw.githubusercontent.com/kiscuit/kiscuit-packages/main/index.json",
   "author": "kiscuittt@gmail.com",
-  "packages": {
-    "com.kiscuit.hair-tool": {
-      "versions": {
-        "1.0.0": {
-          "name": "com.kiscuit.hair-tool",
-          "version": "1.0.0",
-          "displayName": "Kiscuit Hair Tool",
-          "description": "Kiscuit Hair setup, preset, preview and automatic physics editor tools for VRChat hair assets.",
-          "unity": "2022.3",
-          "author": {
-            "name": "Kiscuit",
-            "email": "kiscuittt@gmail.com"
-          },
-          "vpmDependencies": {
-            "nadena.dev.modular-avatar": ">=1.18.7 <2.0.0",
-            "jp.lilxyzw.liltoon": ">=2.3.4 <3.0.0",
-            "com.vrchat.avatars": ">=3.10.6 <4.0.0"
-          },
-          "url": "https://github.com/kiscuit/kiscuit-packages/releases/download/v1.0.0/com.kiscuit.hair-tool-1.0.0.zip",
-          "zipSHA256": "d3b99cd8596871b71f2fa6427938fecd25afbf9fa37445e1764024639b6ee878"
-        }
-      }
-    }
-  }
+  "packages": {}
 }
