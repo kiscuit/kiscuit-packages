@@ -207,5 +207,9 @@
     },
     "alert_duration": 1.0,
     "alert_button_color": "#FC86B9"
+  },
+  "kiscuitUpdateNotice": {
+    "version": "1.0.1",
+    "zip_sha256": "247550df093a99b1cbc0b316733db99fef06d9fa56558c057095af6b4328a97d"
   }
 }
