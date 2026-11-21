@@ -18,6 +18,7 @@ main{width:min(100%,510px);background:white;border:1px solid #f1d6e2;border-radi
 .langs button:focus-visible,.launch:focus-visible,summary:focus-visible,.copy:focus-visible{outline:3px solid #9d4272;outline-offset:2px}
 .launch{display:block;text-align:center;text-decoration:none;background:var(--pink);color:#35172b;font-size:22px;font-weight:850;border-radius:15px;padding:19px 15px;transition:filter .15s}
 .launch:hover{filter:brightness(.97)}
+.guide{color:var(--muted);font-size:13px;line-height:1.75;text-align:center;white-space:pre-line;margin:14px auto 0;max-width:440px}
 details{margin-top:28px;border-top:1px solid var(--line);padding-top:19px}
 summary{cursor:pointer;color:var(--deep);font-size:14px;font-weight:800;list-style:none}
 summary::-webkit-details-marker{display:none}
@@ -39,6 +40,7 @@ details[open] summary:before{content:"▾ "}
 <button type="button" data-lang="en" aria-pressed="false">ENGLISH</button>
 </nav>
 <a class="launch" href="vcc://vpm/addRepo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkiscuit%2Fkiscuit-packages%2Fmain%2Findex.json" id="launch">VCC 열기</a>
+<p class="guide" id="guide">버튼을 누르면 VCC가 열립니다.</p>
 <details>
 <summary id="fallback-title">앱이 열리지 않나요?</summary>
 <p class="fallback" id="fallback-body">VCC에서 Add Repository를 선택한 뒤 아래 주소를 붙여넣으세요.</p>
@@ -53,9 +55,15 @@ details[open] summary:before{content:"▾ "}
 const query=new URLSearchParams(location.search);
 const app=query.get("app")==="alcom"?"ALCOM":"VCC";
 const translations={
-ja:{launch:"{app}を開く",fallback:"アプリが開きませんか？",body:"{app}の「Add Repository」で以下のURLを追加してください。",copy:"URLをコピー",copied:"コピーしました！"},
-ko:{launch:"{app} 열기",fallback:"앱이 열리지 않나요?",body:"{app}에서 Add Repository를 선택한 뒤 아래 주소를 붙여넣으세요.",copy:"주소 복사",copied:"복사 완료!"},
-en:{launch:"Open {app}",fallback:"App not opening?",body:"In {app}, select Add Repository and paste the URL below.",copy:"Copy URL",copied:"Copied!"}
+ja:{launch:"{app}を開く",fallback:"アプリが開きませんか？",body:"{app}の「Add Repository」で以下のURLを追加してください。",copy:"URLをコピー",copied:"コピーしました！",
+guideAlcom:"ボタンを押すとALCOMが開きます。\nリポジトリの追加を承認後、「Projects」→「Manage」から「Kiscuit Hair Tool」の最新版をインストールしてください。",
+guideVcc:"ボタンを押すとVCCが開きます。\nリポジトリの追加を承認後、「Projects」→「Manage Project」から「Kiscuit Hair Tool」の最新版をインストールしてください。"},
+ko:{launch:"{app} 열기",fallback:"앱이 열리지 않나요?",body:"{app}에서 Add Repository를 선택한 뒤 아래 주소를 붙여넣으세요.",copy:"주소 복사",copied:"복사 완료!",
+guideAlcom:"버튼을 누르면 ALCOM이 열립니다.\n저장소 추가를 승인한 뒤, [프로젝트] → [관리]에서 ‘Kiscuit Hair Tool’의 최신 버전을 설치하세요.",
+guideVcc:"버튼을 누르면 VCC가 열립니다.\n저장소 추가를 승인한 뒤, [Projects] → [Manage Project]에서 ‘Kiscuit Hair Tool’의 최신 버전을 설치하세요."},
+en:{launch:"Open {app}",fallback:"App not opening?",body:"In {app}, select Add Repository and paste the URL below.",copy:"Copy URL",copied:"Copied!",
+guideAlcom:"Click the button to open ALCOM.\nConfirm adding the repository, then go to Projects → Manage and install the latest version of ‘Kiscuit Hair Tool’.",
+guideVcc:"Click the button to open VCC.\nConfirm adding the repository, then go to Projects → Manage Project and install the latest version of ‘Kiscuit Hair Tool’."}
 };
 const browserLang=(navigator.language||"en").toLowerCase();
 let lang=query.has("lang")&&translations[query.get("lang")]?query.get("lang"):(browserLang.startsWith("ja")?"ja":browserLang.startsWith("ko")?"ko":"en");
@@ -64,6 +72,7 @@ const t=translations[lang], fill=s=>s.replaceAll("{app}",app);
 document.documentElement.lang=lang;
 document.title="Kiscuit — "+fill(t.launch);
 document.getElementById("launch").textContent=fill(t.launch);
+document.getElementById("guide").textContent=app==="ALCOM"?t.guideAlcom:t.guideVcc;
 document.getElementById("fallback-title").textContent=t.fallback;
 document.getElementById("fallback-body").textContent=fill(t.body);
 document.getElementById("copy").textContent=t.copy;
