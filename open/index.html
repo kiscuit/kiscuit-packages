@@ -40,7 +40,7 @@ details[open] summary:before{content:"▾ "}
 <button type="button" data-lang="en" aria-pressed="false">ENGLISH</button>
 </nav>
 <a class="launch" href="vcc://vpm/addRepo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkiscuit%2Fkiscuit-packages%2Fmain%2Findex.json" id="launch">VCC 열기</a>
-<p class="guide" id="guide" aria-live="polite">버튼을 누르면 VCC가 열립니다.\n저장소를 추가한 뒤 프로젝트에 최신 Kiscuit Hair Tool을 설치하세요.</p>
+<p class="guide" id="guide" aria-live="polite" style="display:block;width:100%;text-align:left!important;direction:ltr;">버튼을 누르면 VCC가 열립니다.\n저장소를 추가한 뒤 프로젝트에 최신 Kiscuit Hair Tool을 설치하세요.</p>
 <details>
 <summary id="fallback-title">앱이 열리지 않나요?</summary>
 <p class="fallback" id="fallback-body">VCC에서 Add Repository를 선택한 뒤 아래 주소를 붙여넣으세요.</p>
@@ -72,7 +72,9 @@ const t=translations[lang], fill=s=>s.replaceAll("{app}",app);
 document.documentElement.lang=lang;
 document.title="Kiscuit — "+fill(t.launch);
 document.getElementById("launch").textContent=fill(t.launch);
-document.getElementById("guide").textContent=app==="ALCOM"?t.guideAlcom:t.guideVcc;
+const guide=document.getElementById("guide");
+guide.textContent=app==="ALCOM"?t.guideAlcom:t.guideVcc;
+guide.style.setProperty("text-align","left","important");
 document.getElementById("fallback-title").textContent=t.fallback;
 document.getElementById("fallback-body").textContent=fill(t.body);
 document.getElementById("copy").textContent=t.copy;
