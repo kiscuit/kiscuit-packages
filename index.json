@@ -36,8 +36,8 @@
     "ja": "일본어에여 ",
     "en": "영어에",
     "banner": "",
-    "alert_id": "c09cfcd364fd4632aecd9cb3fe52daee",
-    "revision": "c09cfcd364fd4632aecd9cb3fe52daee",
+    "alert_id": "5984e48cfce44815a0b3167d30b3b725",
+    "revision": "5984e48cfce44815a0b3167d30b3b725",
     "effect_mode": "custom",
     "effect": {
       "name": "새 효과",
@@ -48,6 +48,7 @@
       "count": 6,
       "duration": 0.800000011920929,
       "speed": 1.0,
+      "preset_id": "",
       "gradient": {
         "times": [
           0.0,
@@ -79,6 +80,7 @@
       "count": 6,
       "duration": 0.800000011920929,
       "speed": 1.0,
+      "preset_id": "",
       "gradient": {
         "times": [
           0.0,
