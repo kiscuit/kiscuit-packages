@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fc86b9">
+<meta name="description" content="Install Kiscuit Hair Tool for VRChat with ALCOM, VCC, or a manual .tgz download.">
+<title>Kiscuit Hair Tool — Install</title>
+<style>
+:root{--pink:#fc86b9;--ink:#332532;--muted:#756a74;--border:#f1dce6}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Apple SD Gothic Neo",sans-serif;background:linear-gradient(140deg,#fff1f6,#fffaf3 65%,#fff4fa);color:var(--ink);line-height:1.55}
+main{max-width:900px;margin:auto;padding:25px 20px 65px}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.brand{font-size:22px;font-weight:900;letter-spacing:.04em}
+.brand span{color:#c93e84}
+.version{font-size:11px;background:white;border:1px solid var(--border);border-radius:22px;padding:5px 9px;margin-left:8px;color:var(--muted)}
+.langs{display:flex;gap:5px;background:#fff;border:1px solid var(--border);padding:4px;border-radius:12px}
+.langs button{cursor:pointer;border:0;background:transparent;border-radius:8px;padding:6px 10px;color:var(--muted);font-weight:700}
+.langs button[aria-pressed="true"]{background:#ffe3ee;color:#8a285e}
+.hero{text-align:center;padding:55px 8px 38px}
+.cookie{font-size:43px}
+h1{font-size:clamp(28px,5vw,42px);letter-spacing:-.03em;line-height:1.2;margin:13px 0}
+.hero p{color:var(--muted);font-size:15px;max-width:580px;margin:auto}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:22px;box-shadow:0 12px 30px #8e3e6010;display:flex;flex-direction:column}
+.card.recommended{border:2px solid var(--pink);padding:21px}
+.eyebrow{font-size:12px;font-weight:800;color:#b12f74;letter-spacing:.05em}
+h2{font-size:23px;margin:8px 0 5px}
+.card p{font-size:13px;color:var(--muted);flex:1;margin:3px 0 20px}
+.button{min-height:46px;text-decoration:none;display:flex;justify-content:center;align-items:center;text-align:center;background:#fff2f8;border:1px solid #efc5d8;border-radius:12px;padding:9px;color:#6d244f;font-size:14px;font-weight:800}
+.button:hover{filter:brightness(.97)}
+.button.hot{background:var(--pink);border-color:var(--pink);color:#43122b}
+.button.manual{background:#fff7e8;border-color:#efd8a7}
+.panel{background:#ffffffd9;border:1px solid var(--border);border-radius:18px;padding:19px 22px;margin-top:17px}
+h3{font-size:17px;margin:0 0 9px}
+.panel p{color:var(--muted);font-size:13px;margin:7px 0}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;list-style:none;margin:12px 0;padding:0}
+.steps li{background:#fff3f8;border-radius:11px;padding:13px;font-size:13px;font-weight:600}
+.steps strong{color:#b12f74}
+.url{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--border);padding:8px 9px 8px 13px;border-radius:11px;margin-top:12px}
+.url code{font-size:11px;overflow:auto;white-space:nowrap;flex:1;color:#765267}
+.url button{white-space:nowrap;border:0;border-radius:8px;background:#ffe1ed;color:#7d3154;font-weight:800;cursor:pointer;padding:8px 12px}
+.small{font-size:12px!important}
+a{color:#a22e68}
+footer{text-align:center;font-size:12px;color:var(--muted);margin-top:26px}
+button:focus-visible,a:focus-visible{outline:3px solid #a22973;outline-offset:3px}
+@media(max-width:720px){.cards,.steps{grid-template-columns:1fr}.hero{padding-top:36px}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="brand">🍪 Kis<span>cuit</span><span class="version">Hair Tool v1.0.0</span></div>
+<nav class="langs" aria-label="Language"><button data-lang="ja" aria-pressed="true">日本語</button><button data-lang="ko" aria-pressed="false">한국어</button><button data-lang="en" aria-pressed="false">EN</button></nav></header>
+<section class="hero"><div class="cookie">✦ 🍪 ✦</div><h1 data-t="title">Kiscuitをインストールしよう！</h1><p data-t="intro">ALCOM、VCC、または手動でインストールできます。ご利用のアプリを先にインストールしてください。</p></section>
+<section class="cards">
+<article class="card recommended"><div class="eyebrow" data-t="rec">01 · おすすめ</div><h2>ALCOM</h2><p data-t="alcom">ALCOMユーザー向け。「Use ALCOM for vcc: URL Scheme」をALCOMの設定で有効にしてください。</p><a class="button hot" href="vcc://vpm/addRepo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkiscuit%2Fkiscuit-packages%2Fmain%2Findex.json" data-t="addAlcom">ALCOMに追加</a></article>
+<article class="card"><div class="eyebrow">02 · VCC</div><h2>VCC</h2><p data-t="vcc">VRChat Creator Companionユーザー向け。アプリが開いたらリポジトリの追加を承認してください。</p><a class="button" href="vcc://vpm/addRepo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkiscuit%2Fkiscuit-packages%2Fmain%2Findex.json" data-t="addVcc">VCCに追加</a></article>
+<article class="card"><div class="eyebrow" data-t="manualStep">03 · 手動</div><h2 data-t="manualTitle">手動インストール</h2><p data-t="manual">.tgzをダウンロードし、Unity Package Managerで「Add package from tarball」を選びます。</p><a class="button manual" href="https://github.com/kiscuit/kiscuit-packages/releases/download/v1.0.0/com.kiscuit.hair-tool-1.0.0.tgz" data-t="download">.tgzをダウンロード</a></article>
+</section>
+<section class="panel"><h3 data-t="steps">VCC / ALCOM のインストール手順</h3>
+<ol class="steps"><li data-t="step1">① ボタンを押してアプリを開く</li><li data-t="step2">② 「Kiscuit Packages」を追加する</li><li data-t="step3">③ 対象プロジェクトで「Kiscuit Hair Tool」をインストール</li></ol>
+<p class="small" data-t="note">※ ALCOMとVCCは同じ vcc: リンクを使います。開くアプリはPCのプロトコル設定で決まり、Unityプロジェクトへのインストールは別途確認が必要です。</p></section>
+<section class="panel"><h3 data-t="fallbackTitle">ボタンが動かない場合</h3><p data-t="fallback">VCCの Settings → Packages → Add Repository、またはALCOMの Repositories → Add Repository に以下のURLを貼り付けてください。</p><div class="url"><code id="repo">https://raw.githubusercontent.com/kiscuit/kiscuit-packages/main/index.json</code><button id="copy" data-t="copy">URLをコピー</button></div></section>
+<section class="panel"><h3 data-t="depsTitle">依存パッケージ</h3><p data-t="deps">VRChat SDK - Avatars、Modular Avatar / NDMF、lilToon が必要です。リポジトリが未登録の場合は先に追加してください。</p><p><a href="https://vpm.nadena.dev/vpm.json" target="_blank" rel="noopener">Modular Avatar / NDMF</a> · <a href="https://lilxyzw.github.io/vpm-repos/vpm.json" target="_blank" rel="noopener">lilToon</a></p></section>
+<footer><a href="https://github.com/kiscuit/kiscuit-packages/releases/latest" target="_blank" rel="noopener" data-t="latest">最新リリース</a><p data-t="key">購入キーを他の人と共有しないでください。</p></footer>
+</main>
+<script>
+const t={
+ja:{title:"Kiscuitをインストールしよう！",intro:"ALCOM、VCC、または手動でインストールできます。ご利用のアプリを先にインストールしてください。",rec:"01 · おすすめ",alcom:"ALCOMユーザー向け。「Use ALCOM for vcc: URL Scheme」をALCOMの設定で有効にしてください。",addAlcom:"ALCOMに追加",vcc:"VRChat Creator Companionユーザー向け。アプリが開いたらリポジトリの追加を承認してください。",addVcc:"VCCに追加",manualStep:"03 · 手動",manualTitle:"手動インストール",manual:".tgzをダウンロードし、Unity Package Managerで「Add package from tarball」を選びます。",download:".tgzをダウンロード",steps:"VCC / ALCOM のインストール手順",step1:"① ボタンを押してアプリを開く",step2:"② 「Kiscuit Packages」を追加する",step3:"③ 対象プロジェクトで「Kiscuit Hair Tool」をインストール",note:"※ ALCOMとVCCは同じ vcc: リンクを使います。開くアプリはPCのプロトコル設定で決まり、Unityプロジェクトへのインストールは別途確認が必要です。",fallbackTitle:"ボタンが動かない場合",fallback:"VCCの Settings → Packages → Add Repository、またはALCOMの Repositories → Add Repository に以下のURLを貼り付けてください。",copy:"URLをコピー",copied:"コピーしました！",depsTitle:"依存パッケージ",deps:"VRChat SDK - Avatars、Modular Avatar / NDMF、lilToon が必要です。リポジトリが未登録の場合は先に追加してください。",latest:"最新リリース",key:"購入キーを他の人と共有しないでください。"},
+ko:{title:"Kiscuit Hair Tool 설치하기!",intro:"ALCOM, VCC 또는 수동 파일 설치를 선택하세요. 사용할 앱은 먼저 설치해 주세요.",rec:"01 · 추천",alcom:"ALCOM 사용자용. ALCOM 설정에서 'Use ALCOM for vcc: URL Scheme'를 켜 주세요.",addAlcom:"ALCOM에 추가",vcc:"VRChat Creator Companion 사용자용. 앱이 열리면 저장소 추가를 승인해 주세요.",addVcc:"VCC에 추가",manualStep:"03 · 수동",manualTitle:"수동 설치",manual:".tgz 파일을 내려받고 Unity Package Manager에서 'Add package from tarball'을 선택하세요.",download:".tgz 다운로드",steps:"VCC / ALCOM 설치 방법",step1:"① 버튼을 눌러 앱 열기",step2:"② 'Kiscuit Packages' 저장소 추가",step3:"③ 프로젝트에서 'Kiscuit Hair Tool' 설치",note:"※ 두 버튼은 같은 vcc: 링크를 사용합니다. 어떤 앱이 열리는지는 PC의 프로토콜 설정에 따라 달라집니다. 프로젝트 패키지 설치는 별도 승인이 필요합니다.",fallbackTitle:"버튼이 작동하지 않나요?",fallback:"VCC의 Settings → Packages → Add Repository 또는 ALCOM의 Repositories → Add Repository에 아래 URL을 붙여넣으세요.",copy:"URL 복사",copied:"복사 완료!",depsTitle:"필요한 패키지",deps:"VRChat SDK - Avatars, Modular Avatar / NDMF, lilToon이 필요합니다. 저장소가 없다면 먼저 추가하세요.",latest:"최신 릴리스 보기",key:"구매 키는 다른 사람과 공유하지 마세요."},
+en:{title:"Install Kiscuit Hair Tool!",intro:"Choose ALCOM, VCC, or manual installation. Install your package manager first.",rec:"01 · Recommended",alcom:"For ALCOM users. Enable 'Use ALCOM for vcc: URL Scheme' in ALCOM settings.",addAlcom:"Add to ALCOM",vcc:"For VRChat Creator Companion users. Confirm the repository after opening the app.",addVcc:"Add to VCC",manualStep:"03 · Manual",manualTitle:"Manual install",manual:"Download the .tgz file. In Unity Package Manager, choose 'Add package from tarball'.",download:"Download .tgz",steps:"Install with VCC / ALCOM",step1:"① Click the button to open the app",step2:"② Add the 'Kiscuit Packages' repository",step3:"③ Install 'Kiscuit Hair Tool' in your project",note:"Both buttons use the same vcc: link. Your OS protocol-handler setting determines which app opens. Installing the package into a project still requires confirmation.",fallbackTitle:"Button not working?",fallback:"Paste the URL below into VCC: Settings → Packages → Add Repository, or ALCOM: Repositories → Add Repository.",copy:"Copy URL",copied:"Copied!",depsTitle:"Required packages",deps:"Requires VRChat SDK - Avatars, Modular Avatar / NDMF, and lilToon. Add their repositories first if needed.",latest:"Latest release",key:"Do not share your purchase key."}};
+let lang="ja";function setLang(next){lang=next;document.documentElement.lang=next;document.querySelectorAll("[data-t]").forEach(e=>{const v=t[next][e.dataset.t];if(v)e.textContent=v});document.querySelectorAll("[data-lang]").forEach(e=>e.setAttribute("aria-pressed",e.dataset.lang===next?"true":"false"))}
+document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+document.getElementById("copy").addEventListener("click",async()=>{const value=document.getElementById("repo").textContent;try{await navigator.clipboard.writeText(value);document.getElementById("copy").textContent=t[lang].copied;setTimeout(()=>document.getElementById("copy").textContent=t[lang].copy,1600)}catch(e){window.prompt("Copy URL",value)}});
+</script></body></html>
