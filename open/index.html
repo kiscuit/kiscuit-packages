@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fc86b9">
+<meta name="description" content="Open Kiscuit Packages in ALCOM or VCC.">
+<title>Open Kiscuit Packages</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fff7fa;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Apple SD Gothic Neo",sans-serif;color:#382535;padding:20px}
+main{width:min(100%,410px);padding:32px 25px;border:1px solid #f0d9e2;border-radius:22px;background:white;box-shadow:0 12px 38px #a34c7612;text-align:center}
+.brand{color:#ae3975;font-weight:800;letter-spacing:.03em;font-size:14px}
+h1{font-size:24px;margin:13px 0 8px}
+p{font-size:13px;color:#76636d;margin:5px 0 20px}
+a.action{display:block;padding:14px 18px;background:#fc86b9;color:#431a32;border-radius:12px;font-weight:800;text-decoration:none;font-size:16px}
+a.action:hover{background:#f978b1}
+small{display:block;font-size:12px;margin:12px 0;color:#7d6b77}
+details{text-align:left;margin-top:18px;border-top:1px solid #f0d9e2;padding-top:15px;font-size:13px}
+summary{cursor:pointer;font-weight:700;color:#8c3765}
+code{display:block;overflow:auto;white-space:nowrap;padding:9px;margin-top:10px;border:1px solid #f1e0e7;border-radius:8px;font-size:10px}
+button{background:#fff0f6;border:1px solid #f0ccde;border-radius:8px;padding:7px 13px;font-weight:700;cursor:pointer;margin-top:8px}
+</style>
+</head>
+<body>
+<main>
+<div class="brand">🍪 KISCUIT</div>
+<h1 id="heading">패키지 매니저 열기</h1>
+<p id="description">버튼을 누르면 Kiscuit 저장소를 추가할 수 있습니다.</p>
+<a class="action" id="launch" href="vcc://vpm/addRepo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkiscuit%2Fkiscuit-packages%2Fmain%2Findex.json">앱 열기</a>
+<small id="tip">앱이 설치되어 있어야 합니다. 실행 확인 창이 뜨면 허용해 주세요.</small>
+<details><summary id="fallback">앱이 열리지 않나요?</summary>
+<p id="explain">패키지 매니저에서 Add Repository를 선택하고 아래 주소를 붙여넣으세요.</p>
+<code id="repository">https://raw.githubusercontent.com/kiscuit/kiscuit-packages/main/index.json</code>
+<button id="copy" type="button">주소 복사</button>
+</details>
+</main>
+<script>
+const app=new URLSearchParams(location.search).get("app")==="alcom"?"ALCOM":"VCC";
+const lang=new URLSearchParams(location.search).get("lang")||((navigator.language||"").startsWith("ja")?"ja":(navigator.language||"").startsWith("ko")?"ko":"en");
+const translations={
+ko:{heading:"{app} 열기",description:"Kiscuit 패키지 저장소를 추가하려면 아래 버튼을 누르세요.",launch:"{app} 열기",tip:"앱 실행 확인 창이 뜨면 허용해 주세요.",fallback:"앱이 열리지 않나요?",explain:"{app}에서 Add Repository를 선택하고 아래 주소를 붙여넣으세요.",copy:"주소 복사",copied:"복사 완료!"},
+ja:{heading:"{app} を開く",description:"ボタンを押すと、Kiscuitのパッケージリポジトリを追加できます。",launch:"{app} を開く",tip:"アプリ起動の確認が表示されたら許可してください。",fallback:"アプリが開かない場合",explain:"{app} の Add Repository から以下のURLを登録してください。",copy:"URLをコピー",copied:"コピーしました"},
+en:{heading:"Open {app}",description:"Use the button to add the Kiscuit package repository.",launch:"Open {app}",tip:"Allow the browser to open the application if prompted.",fallback:"App not opening?",explain:"Choose Add Repository in {app} and paste this URL.",copy:"Copy URL",copied:"Copied!"}
+};
+const t=translations[lang]||translations.en;
+document.documentElement.lang=lang;
+for(const id of ["heading","description","launch","tip","fallback","explain","copy"]){document.getElementById(id).textContent=t[id].replaceAll("{app}",app)}
+if(app==="ALCOM") document.getElementById("tip").textContent+="  "+({ko:"ALCOM 설정에서 'Use ALCOM for vcc: URL Scheme'를 활성화하세요.",ja:"ALCOM設定で「Use ALCOM for vcc: URL Scheme」を有効にしてください。",en:"Enable 'Use ALCOM for vcc: URL Scheme' in ALCOM settings."}[lang]||"");
+document.getElementById("copy").onclick=async()=>{const url=document.getElementById("repository").textContent;try{await navigator.clipboard.writeText(url);document.getElementById("copy").textContent=t.copied}catch(_){prompt("Copy URL",url)}};
+</script>
+</body></html>
