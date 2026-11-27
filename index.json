@@ -3,30 +3,7 @@
   "id": "com.kiscuit.packages",
   "url": "https://raw.githubusercontent.com/kiscuit/kiscuit-packages/main/index.json",
   "author": "kiscuittt@gmail.com",
-  "packages": {
-    "com.kiscuit.hair-tool": {
-      "versions": {
-        "1.0.1": {
-          "name": "com.kiscuit.hair-tool",
-          "version": "1.0.1",
-          "displayName": "Kiscuit Hair Tool",
-          "description": "Kiscuit Hair setup, preset, preview and automatic physics editor tools for VRChat hair assets.",
-          "unity": "2022.3",
-          "author": {
-            "name": "Kiscuit",
-            "email": "kiscuittt@gmail.com"
-          },
-          "vpmDependencies": {
-            "nadena.dev.modular-avatar": ">=1.18.7 <2.0.0",
-            "jp.lilxyzw.liltoon": ">=2.3.4 <3.0.0",
-            "com.vrchat.avatars": ">=3.10.6 <4.0.0"
-          },
-          "url": "https://github.com/kiscuit/kiscuit-packages/releases/download/v1.0.1/com.kiscuit.hair-tool-1.0.1.zip",
-          "zipSHA256": "247550df093a99b1cbc0b316733db99fef06d9fa56558c057095af6b4328a97d"
-        }
-      }
-    }
-  },
+  "packages": {},
   "kiscuitBrandComment": {
     "ko": "한국어요 \n앞 [링크다](http://naver.com) 네이버다리 ",
     "ja": "일본\n앞 [링크다](http://naver.com) 네이버다리 ",
@@ -59,9 +36,5 @@
     },
     "alert_duration": 1.7999999523162842,
     "alert_button_color": ""
-  },
-  "kiscuitUpdateNotice": {
-    "version": "1.0.1",
-    "zip_sha256": "247550df093a99b1cbc0b316733db99fef06d9fa56558c057095af6b4328a97d"
   }
 }
